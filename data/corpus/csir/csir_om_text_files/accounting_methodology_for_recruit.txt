@@ -1,0 +1,53 @@
+---
+issue_date: 2025-05-09
+institute: CSIR
+superseded: 0
+---
+
+--- PAGE 1 ---
+75 Azadi ka Amrit Mahotsav
+
+वैज्ञानिक तथा औद्योगिक अनुसंधान परिषद
+COUNCIL OF SCIENTIFIC & INDUSTRIAL RESEARCH
+अनुसंधान भवन, 2, रफी मार्ग, नई दिल्ली-110 001
+Anusandhan Bhawan, 2, Rafi Marg, New Delhi-110 001
+
+No. 42-1(1)/Comp/Accts/2025-26
+Dated 09-May-2025
+
+To,
+The Directors/Heads of all CSIR Labs/Instts/Units
+
+Sub: Accounting methodology for recruitment exam related financial transactions by CSIR HQrs and CSIR Labs/Instts/Units -reg
+
+Madam/Sir,
+
+The accounting of financial transactions (Receipts and Payments) on recruitment exams has been engaging the attention of CSIR Hqrs for quite some time. To address the issues involved, the following accounting methodology has been decided for projectization and carrying out the financial transactions on recruitment exam related expenditure: -
+
+1. In place of the existing system of receipt of application fee for recruitment to any post being credited to the c-code R06713 (Application Fee), a separate/distinct GDA Project may be opened in AMS for each recruitment exam.
+2. Financial transactions (both receipts and payments) for a particular recruitment exam may be carried out in the related GDA Project, specifically opened for the exam, under the BH R90807 and P90807 for Receipts and Payments respectively. Receipts or Payments pertaining to one recruitment exam cannot be transacted in another recruitment exam project.
+3. In case of expenditure exceeding the receipts in a particular recruitment exam project, the excess expenditure shall be met out of :-
+   a. Regular Budget Heads of Govt. Grant in case of Labs/Instts/Units, and
+   b. BH P80507 in case of CSIR HQrs.
+
+This issues with the approval of the Competent Authority.
+
+Yours faithfully,
+
+[Signature]
+(Manish Kumar Sharma)
+Dy. Financial Adviser
+
+Copy to: -
+
+1. Sr. Dy. FAs/Sr. CoFAs/Dy. FAs/CoFAs and F&AOs of CSIR Hqrs and all CSIR Labs/Instts/Units
+2. Sr. DSs/Sr. CoAs/DSs/CoAs/USs/AOs of CSIR Hqrs and all CSIR Labs/Instts/Units
+3. O/o. the DG, CSIR
+4. O/o. the JS&FA, CSIR
+5. O/o. the JS(Admn), CSIR
+6. Office Copy
+7. Head –IT with the request to host it on CSIR website
+
+Phones : EPABX-23710138, 23710144, 23710158, 23710468, 23710805, 23711251, 23712429, 23714249, 23714769, 23715303
+Fax : 91-11-23714788
+Website : http://www.csir.res.in

@@ -1,0 +1,2 @@
+Baseline,faithfulness,answer_relevancy,context_precision,context_recall,answer_similarity,answer_correctness
+gear,0.6243293704181654,0.481420576502745,0.45052631574442104,0.5650591864276074,0.5200618377979945,0.4498478592352119

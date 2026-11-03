@@ -1,0 +1,47 @@
+---
+issue_date: 2024-02-14
+institute: IACS
+superseded: 0
+---
+
+--- PAGE 1 ---
+DST/WISE-KIRAN/Fellowship  
+Government of India  
+Ministry of Science & Technology  
+Department of Science & Technology  
+WISE-KIRAN Division  
+
+Technology Bhavan  
+New Delhi-110016  
+Date: 14.02.2024  
+
+Subject: Revision of fellowship under different Programmes of WISE-KIRAN Division.
+
+The Department of Science and Technology has revised fellowships under different Programmes of the WISE-KIRAN Division as mentioned below:
+
+Programme | Qualification | Existing Emoluments per month (in Rs.) | Revised Emoluments per month (in Rs.)
+--- | --- | --- | ---
+WISE-PDF, WISE-SCOPE and CSRI-PDF | Ph.D. or equivalent degree | 55,000/- + HRA | 67,000/- + HRA
+WISE-IPR | M.Sc./ B. Tech./ MBBS or equivalent degree | 25,000/- (consolidated) | 30,000/- (consolidated)
+ | M.Phil./ M. Tech./ M. Pharma/ M. V. Sc./ or equivalent degree | 30,000/- (consolidated) | 35,000/- (consolidated)
+ | Ph.D. or equivalent | 35,000/- (consolidated) | 40,000/- (consolidated)
+WOS-A and WOS-B | M.Sc./ B. Tech./ MBBS or equivalent degree | 31,000/- + HRA | 37,000/- + HRA
+ | M.Phil./ M. Tech./ M. Pharma/ M. V. Sc./ or equivalent degree | 40,000/- + HRA | 48,000/- + HRA
+ | Ph.D. or equivalent degree | 55,000/- + HRA | 67,000/- + HRA
+
+2. House Rent Allowance (HRA) shall be as per Government norms.  
+3. The revised emoluments shall be with effect from 01.01.2023.  
+4. The grantee institutions are advised to pay the arrears, on account of revision, if any, to the Principal Investigators (PI).  
+5. Other terms & conditions remain unchanged.  
+6. This issue with the approval of the Secretary, DST and AS&FA, DST, vide Dy.No. 47263 dated 12.02.2024.  
+
+[Signature]  
+(Vandana Singh)  
+Head, WISE-KIRAN Division  
+
+Copy to:  
+1. All Programme Officers  
+2. Senior PPS to Secretary, DST  
+3. IFD, DST  
+4. CoA, DST & PAO, DST  
+5. Budget Cell

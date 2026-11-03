@@ -1,0 +1,2 @@
+Baseline,faithfulness,answer_relevancy,context_precision,context_recall,answer_similarity,answer_correctness
+graphrag,0.8265610737926462,0.7036282355276968,0.6421052630936842,0.764208773682458,0.6518863030497799,0.49800951689547135

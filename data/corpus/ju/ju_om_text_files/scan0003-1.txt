@@ -1,0 +1,42 @@
+---
+issue_date: 2025-02-19
+institute: JU
+superseded: 0
+---
+
+--- PAGE 1 ---
+Jadavpur University  
+Kolkata- 32  
+
+Date: 19.02.2025  
+
+NOTICE  
+
+A walk-in interview will be held on 05th March, 2025 (Wednesday) at 02:00 p.m. in the Departmental Committee Room, Department of Computer Science and Engineering for the recruitment of Two Junior Research Fellows under DRDO funded Research project entitled “Claim Detection and Verification using Deep NLP: an Indian Perspective” vide sanction order no. DFTM/02/311/M/01/SC-17/P09/JCBCAT-23 dated 18th May 2020 under the supervision of Dr. Dipankar Das, Assistant Professor, Computer Science & Engineering Department, Jadavpur University, Kolkata 700032, as per following details:  
+
+1. Name of Post: Junior Research Fellow (JRF)  
+
+2. Number of the Position: 2 (Two)  
+
+3. Essential Qualification: i) M.E/M.Tech in Computer Science & Engineering  
+
+   Desirable: i) A valid GATE/NET/SET Score  
+   ii) Knowledge and hands-on experience in Natural Language Processing  
+
+4. Age Limit: Not more than 30 years as on the day on which the application is made (Relaxed up to 5 years for SC/ST/OBC/PH/ Women Candidate).  
+
+5. Fellowship: Rs. 31,000.00 (plus 10% HRA if permitted by DRDO)  
+
+6. Tenure: till January, 2026  
+
+The prescribed application form will be available from the University Information counter by a cost of Rs. 50/-. Without all documents, the candidature may be cancelled and may not be allowed to appear for the Interview. Originals along with attested copies of certificates, mark sheets and testimonials are to be produced at the time of Interview.  
+Interested candidates may apply directly to email: dipankar.das@jadavpuruniversity.in with application form (scanned soft copy) and proof of their publications (if any), working experience, mark sheets and testimonials, as attachment within 03rd March, 2025. Please mention “Application for JRF position-DRDO” in the subject line of your email. Shortlisted candidates will be informed by email.  
+
+No T.A. / D.A. is admissible for interview.  
+
+REGISTRAR (Actg.)  
+
+Copy to: System Administrator for JU Website uploading.  
+
+[Signature]  
+19/2/25

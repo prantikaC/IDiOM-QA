@@ -1,0 +1,2 @@
+Baseline,faithfulness,answer_relevancy,context_precision,context_recall,answer_similarity,answer_correctness
+hybrid,0.7780295168672282,0.650530903653669,0.6673684209858948,0.782068107701019,0.634842115862304,0.5950212060463249

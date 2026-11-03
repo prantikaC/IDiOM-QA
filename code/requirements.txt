@@ -1,0 +1,47 @@
+# LLM & Agent Framework
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-anthropic
+langchain-ollama
+langchain-huggingface
+langchain-neo4j
+langchain-text-splitters
+langchain-mcp-adapters
+langgraph
+
+# Structured LLM / DSPy
+dspy
+
+# Vector Store & Retrieval
+faiss-cpu
+rank-bm25
+sentence-transformers
+
+# PDF Processing
+pdfplumber
+pdf2image
+easyocr
+python-frontmatter
+Pillow
+
+# Database
+neo4j
+
+# Web Search Fallback
+duckduckgo-search
+
+# UI
+streamlit
+
+# Evaluation
+ragas
+datasets
+scikit-learn          # Cohen's κ for IAA
+krippendorff          # Ordinal α for IAA on 1-5 ratings
+
+# Utilities
+python-dotenv
+pydantic
+numpy

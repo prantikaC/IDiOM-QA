@@ -1,0 +1,37 @@
+---
+issue_date: 2025-05-01
+institute: IACS
+superseded: 0
+---
+
+--- PAGE 1 ---
+INDIAN ASSOCIATION FOR THE CULTIVATION OF SCIENCE  
+Jadavpur, Kolkata-700032  
+
+Advt No.: RR/SMCS/015                                                                                      Date: 01/05/2025  
+
+___________________________________________________________________________________________  
+
+Advertisement for the position of Research Associate-I/Bridge fellow  
+
+Applications are invited for a RA-I/ Bridge fellow (Institute) position under the supervision of Dr. Rajarshi Ray, School of Mathematical and Computational Sciences, Indian Association for the Cultivation of Science.  
+
+Name of the post : Research Associate-I/Bridge fellow  
+Number of post : One (01)  
+Broad Research Area : System Verification  
+Specific Research Area : Verification of Systems with Machine Learning Components.  
+
+Essential Qualifications:  
+1. A candidate should have first class in B.Sc./B.Tech. & M.Sc./M.Tech. degrees in Computer Science/Mathematics with minimum average marks of 60%. The candidate should have a Ph.D. degree/submitted thesis (documentary proof to be submitted) in Computer Science, preferably not from the lab of Dr. Rajarshi Ray, SMCS, IACS. The candidate should have research experience supported by good quality publications in peer-reviewed conferences and journals. The candidate should be able to mentor junior students.  
+2. A selected candidate who is yet to receive Ph.D. degree, and preferably not from the same laboratory, will draw a fellowship amount as appropriate to a bridge fellowship as per the rules of IACS and will be eligible to receive the full RA-I fellowship from the award date of the doctoral degree, supported by documentary proof.  
+
+Fellowship: As per rules of IACS.  
+Tenure of Fellowship: 6 months.  
+
+The candidate will have no right to claim (explicit or implicit) any post in the institute. The interested candidates should send their complete resume (mentioning email address and phone number) to Dr. Rajarshi Ray via email (rajarshi.ray@iacs.res.in) on or before 15/05/2025.
+--- PAGE 2 ---
+Applications received after this date will not be entertained.
+
+The subject line of the e-mail should be the Full Name of the Candidate followed by “Application for RA-I/Bridge fellow position followed by the advertisement number”. The applications will be shortlisted based on the academic credentials and research experience supported by publications in peer-reviewed conferences and journals. Shortlisted candidates will be notified regarding the interview date and time via email to attend the Online Interview.
+
+Registrar.

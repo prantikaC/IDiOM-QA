@@ -1,0 +1,34 @@
+---
+issue_date: 2024-12-10
+institute: JU
+superseded: 0
+---
+
+--- PAGE 1 ---
+JADAVPUR UNIVERSITY  
+KOLKATA – 700032, INDIA
+
+NOTICE
+
+Date: 10.12.2024
+
+Online applications are invited for Student Internship (of up to 2 months) in the DST-SERB funded project entitled “Ultra-low power always-on analog event detection based IoT for smart agriculture” (Sanction Order No. SRG/2023/001571) under the supervision of Dr. Joydeep Basu (Principal Investigator), Dept. of Electronics & Telecommunication Engineering (ETCE), Jadavpur University, as per details below:
+
+Essential Qualification | Students pursuing Undergraduate (UG) degree in Engineering (B.E. / B.Tech. - Third or Fourth year student with specialization in Electronics and Tele-communication / Electrical / Instrumentation Engineering or similar
+Desirable Qualification | Experience in IoT design and/or Machine Learning
+Assistantship | Up to Rs. 5,000 per month
+Duration of the Internship | Up to 2 months
+Last Date to Apply | 20 Dec. 2024
+Intimation | The selected candidate will be informed through email
+
+► To Apply: Interested candidates are requested to send their detailed CV (in PDF format) and Cover Letter by email to the PI at joydeepbasu.etce@jadavpuruniversity.in. For any further inquiry, the applicant may contact the PI through above email. Please mention “Application for DST-SERB Student Internship” in your email subject line.
+
+► Upon Selection: The selected candidate will have to submit a no-objection certificate (NOC) from his/her respective institution, and he/she will have to produce original and self-attested photocopies of mark-sheets and testimonials for verification.
+
+► Note: No TA/DA is admissible other than the assistantship.
+
+[Signature]
+
+Dr. Joydeep Basu  
+Assistant Professor, Dept. of ETCE  
+Jadavpur University, Kolkata – 700032

@@ -1,0 +1,54 @@
+---
+issue_date: 2025-02-05
+institute: JU
+superseded: 0
+---
+
+--- PAGE 1 ---
+JADAVPUR UNIVERSITY  
+KOLKATA-700032  
+
+Dated: 05.02.2025  
+
+NOTICE  
+
+An Walk-in/Hybrid interview will be held on 17th February, 2025 (Monday) at 2.30 PM for the recruitment of two (2) posts of Junior Research Fellow (JRF) under DVC Sponsored Research Project on Retro-fitted Electric Mobility entitled “Digital Twin Development to study Feasibility of Retro-fitted E-mobility and Technical Requirements for its Sustainability”. The selected fellows will work under the supervision of Prof. Amitava Gupta (PI), Dr. Bhimsen Sen (Co-PI), Dr. Nirmalendu Biswas (Co-PI) of the Project, Department of Power Engineering, Jadavpur University, Salt Lake Campus. The eligibility and recruitments are as mentioned in Annexure II.  
+
+Interested candidates may appear in person directly in the interview with their bio-data, all testimonials and completed application form (in hardcopy @ INR 50) available from the Information Section of the University in all working days. The format of the application may be downloaded from the link http://www.jaduniv.edu.in /upload files/research data/1392050161-1.pdf by paying INR 50 through the link https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=627395 and the candidate must attach the transaction references details with the application form. Without all documents, candidature may be cancelled and may not be allowed to appear for the interview. Please bring the original application form and other supporting documents for physical verification at the time of the interview. The venue of the physical interview is the Meeting Room, Power Engineering Department, Jadavpur University. No TA/DA is admissible for the interview.  
+
+For any queries, may please contact at nbiswas.pe@jadavpuruniversity.in OR amitava.gupta@jadavpuruniversity.in. Out stationed candidates may also apply with completed Application Form along with proof of payment, certificates, mark sheets and testimonials as attachments within 12 PM, 16th February, 2025. Candidates will be informed by e-mail with the meeting-id (for online mode).  
+
+REGISTRAR (Act.)  
+
+[Signature]  
+5/2/25
+--- PAGE 2 ---
+Annexure-II
+
+Mode of Interview: Hybrid, Outstation candidates may be present online
+
+For Post A:
+
+Number of Post: Junior Research Fellow (JRF)–1 (One).
+Essential Qualification: i) Bachelors’ degree in Mechanical/ Power/ Automobile/ Aerospace/ Chemical Engg. with Masters in any of the above or related disciplines with courses in Thermal Engineering/Thermal Hydraulics/Fluid Mechanics.
+ii) Candidate should be GATE qualified in the relevant discipline.
+iii) Candidates with Bachelors’ degree in any of the disciplines mentioned in (i) with GATE qualification and fulfilling the norms for admission to PhD program according to latest UGC and University regulations may also apply.
+
+Desirable Qualification: Preference will be given to candidates having experience in Experimental Work/ Computational Fluid Dynamics (CFD).
+Fellowship: Rs. 37,000/- + HRA (as applicable) per month in the 1st and 2nd year and Rs. 42,000/- + HRA per month in the 3rd year.
+Age: The age limit for JRF as on the day on which the application is made not more than 30 years (relaxable up to 5 years in case of SC/ST/OBC/Woman/PH Candidates).
+Tenure: Up to three (3) years from the date of joining or the termination of the project, whichever earlier.
+
+For Post B:
+
+Number of Post: Junior Research Fellow (JRF)–1 (One).
+Essential Qualification: i) Bachelors’ degree in Electrical/ Power/ Electronics & Telecommunication/ Instrumentation and Electronics or equivalent with a Masters’ in any one of the above or related areas like Control Systems Engineering. Power Electronics, Systems and Control Engineering and Aerospace Engineering.
+ii) Candidate should be GATE qualified in the relevant discipline.
+iii) Candidates with Bachelors’ degree in any of the disciplines mentioned in (i) with GATE qualification and fulfilling the norms for admission to PhD program according to latest UGC and University regulations may also apply
+
+Desirable Qualification: Preference will be given to candidates having experience in MATLAB/SIMULINK and Opal-RT
+Age: The age limit for JRF as on the day on which the application is made not more than 30 years (relaxable up to 5 years in case of SC/ST/OBC/Woman/PH Candidates).
+Tenure: Up to three (3) years from the date of joining or the termination of the project, whichever earlier.
+
+Note:
+• Selected candidate will enroll for the PhD following the University norms. Tuition fees for the PhD scheme will be given from the project fund.

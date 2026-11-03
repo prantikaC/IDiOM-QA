@@ -1,0 +1,2 @@
+Baseline,faithfulness,answer_relevancy,context_precision,context_recall,answer_similarity,answer_correctness
+r3_rag,0.8267448925343661,0.6804425046930286,0.6823027717867803,0.7909463926631307,0.6642356484010128,0.6070588262137426

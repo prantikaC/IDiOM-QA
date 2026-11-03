@@ -1,0 +1,36 @@
+---
+issue_date: 2025-06-09
+institute: JU
+superseded: 0
+---
+
+--- PAGE 1 ---
+JADAVPUR UNIVERSITY  
+KOLKATA – 7000323  
+
+NOTICE  
+
+Date: 09.06.2025  
+
+A walk-in-Interview will be held at the Committee Room (4th Floor, Prayukti Bhaban) of the Department of Electronics and Tele-Communication Engineering, Jadavpur University, on 19th June 2025 at 11 am, for the recruitment of One (01) Junior Research fellow (JRF) under the project entitled “Real-Time Rail Track Safety Monitoring System Using Multi-Modal Data Integration of LIDAR and Thermal Imaging”, funded by Anusandhan National Research Foundation (ANRF), Govt. of India, vide sanction order ANRF/ECRG/2024/002861/ENS, Dated 4th June 2025 under the supervision of Dr. Chinmoy Ghorai, Principal Investigator, Dept. of Electronics and Tele-Communication Engineering, Jadavpur University, as per details below:  
+
+Number of Posts | Junior Research Fellow – One (01)  
+Essential Qualification | B.E./ B.Tech and M.E./ M.Tech in Electronics & Tele-communication Engineering / Computer Science & Engineering/ Information Technology/ related field with at least 75% marks or 8 CGPA (whichever applicable)  
+Desired qualification | i. GATE qualification in the specified/ allied field  
+| ii. Sound knowledge in Internet of Things (IoT), Machine Learning, Deep Learning, Generative AI  
+| iii. Proficiency in Python Programming  
+| iv. Publications in the relevant field if any  
+Age Limit | Not more than 30 years as on the date of advertisement  
+Relaxation on qualification and age | PC/SC/ST/OBC/WOMEN candidate will get relaxation as per Govt. of India Rules  
+Fellowship | INR 37,000 + HRA @30% for first 24 months and INR 42,000 + HRA @30% admissible after the completion of 24 months  
+Duration of the Project | Till the completion of the project subject to satisfactory performance  
+
+The Prescribed application form (in hardcopy @ INR 50) may be obtained from the of Information Section of the University in all working days. The format of the application may be downloaded from the link https://jadavpuruniversity.in/download-centre/application-form-research-2-in-a-set/ by paying INR 50 through the link https://www.onlinesbi.sbi/sbicollect/icollecthome.htm and the candidate must attach the transaction references details with the application form.  
+
+Originals along with self-attested copies of certificates, mark sheets, and testimonials along with duly filled application form(s) are to be produced at the time of the Interview. No TA/DA is admissible for the interview.  
+
+Applicants may send an email to the PI at cghorai.etce@jadavpuruniversity.in with the scanned copy of the filled-in application form, detailed CV, and self-attested scanned copies of educational certificates and mark-sheets (from Class X onwards), GATE/NET scorecard, and other relevant testimonials (as attachments) on or before 17th June 2025. For any further inquiry, interested candidates may contact Dr. Chinmoy Ghorai, Principal Investigator, Department of Electronics and Tele-Communication Engineering, Jadavpur University, at cghorai.etce@jadavpuruniversity.in with the subject line “Enquiry for ANRF JRF Fellow”.  
+
+[Signature]  
+09/06/25  
+REGISTRAR

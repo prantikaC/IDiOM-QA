@@ -1,0 +1,2 @@
+Baseline,faithfulness,answer_relevancy,context_precision,context_recall,answer_similarity,answer_correctness
+deep_rag,0.6891458941247076,0.6200666282181688,0.6308016877006329,0.757257166046975,0.5982026136947434,0.5444357411974343

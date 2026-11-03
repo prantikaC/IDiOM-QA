@@ -1,0 +1,13 @@
+{
+  "title": "IDiOM-QA: A Dataset for Question Answering on Office Memoranda for Indian Research and Educational Institutions",
+  "upload_type": "dataset",
+  "license": "CC-BY-4.0",
+  "version": "1.0.0",
+  "creators": [
+    {"name": "Chakraborty, Prantika", "affiliation": "Indian Association for the Cultivation of Science", "orcid": "0000-0001-9100-5533"},
+    {"name": "Adhikary, Subham", "affiliation": "Indian Institute of Technology Kharagpur", "orcid": "0009-0007-9425-1749"},
+    {"name": "Adhya, Suman", "affiliation": "TU Darmstadt", "orcid": "0000-0001-6568-2020"},
+    {"name": "Sanyal, Debarshi Kumar", "affiliation": "Indian Association for the Cultivation of Science", "orcid": "0000-0001-8723-5002"}
+  ],
+  "keywords": ["question answering", "retrieval-augmented generation", "benchmark", "office memoranda", "knowledge graph"]
+}

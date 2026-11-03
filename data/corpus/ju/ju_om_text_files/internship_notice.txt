@@ -1,0 +1,37 @@
+---
+issue_date: 2025-06-05
+date_note: "approximate: date of the event the notice announces (no date on the OM)"
+institute: JU
+superseded: 0
+---
+
+--- PAGE 1 ---
+NOTICE
+
+Online applications are invited for five (05) student interns under DVC Sponsored Research Project on Retro-fitted Electric Mobility entitled “Digital Twin Development to study Feasibility of Retro-fitted E-mobility and Technical Requirements for its Sustainability”. The selected fellows will work under the supervision of Prof. Amitava Gupta (PI), Dr. Bhimsen Tudu (Co-PI), Dr. Nirmalendu Biswas (Co-PI) of the Project, Department of Power Engineering, Jadavpur University, Salt Lake Campus.
+
+For Post A:
+
+Number of Post : Students Interns – 2+1 (three) purely temporary.
+Essential Qualification: Bachelors’ degree (completed/pursuing) in Mechanical/ Power/ Automobile/ Aerospace/ Chemical Engg./ Nanoscience and Technology or equivalent. One of the posts is for interns with exposure to mechanical systems associated with Electric Vehicles.
+Desirable Qualification: Preference will be given to candidates having experience in Experimental Work/ Computational Fluid Dynamics (CFD).
+Fellowship : Rs. 5000/- per month.
+Duration : 2 (two) months starting from June 15, 2025
+
+For Post B:
+
+Number of Post : Students Interns – 1 (one) purely temporary.
+Essential Qualification: Bachelors’ degree in Electrical/ Power/ Electronics & Telecommunication/ Instrumentation and Electronics or equivalent.
+Fellowship : Rs. 5000/- per month.
+Duration : 2 (two) months starting from June 15,2025
+
+For Post C:
+
+Number of Post : Students Interns – 1 (one) purely temporary.
+Essential Qualification: Bachelors’ degree in Mechanical/Automobile Engineering followed by Masters or PhD (candidates enrolled for PhD are also eligible) with experience in handling 3D printing and/or 3D scanning
+Fellowship : Rs. 10000/- per month.
+Duration : 2 (two) months starting from June 15,2025
+
+Interested candidates may apply directly through email to nbiswas.pe@jadavpuruniversity.in OR bhimsen.tudu@jadavpuruniversity.in with their resume and relevant testimonials (self-attested), proof of their publications (if any), as an attachment (in a single PDF file) within 5th June , 2025 (within 5 pm). A copy of the email should be marked to amitava.gupta@jadavpuruniversity.in. Shortlisted candidates will be informed by email for selection interview in hybrid mode.
+
+No T.A./ D.A. is admissible for interview. The start date of the internship may be altered in order to synchronize with availability of specialized equipment which are under procurement, keeping the duration same. For non-JU candidates who are selected, University levied internship fees will be re-imbursed on successful completion.

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use IDiOM-QA, please cite it as below."
+title: "IDiOM-QA: A Dataset for Question Answering on Office Memoranda for Indian Research and Educational Institutions"
+version: 1.0.0
+license: CC-BY-4.0
+repository-code: "https://github.com/prantikaC/IDiOM-QA"
+authors:
+  - family-names: Chakraborty
+    given-names: Prantika
+    affiliation: Indian Association for the Cultivation of Science
+    orcid: "https://orcid.org/0000-0001-9100-5533"
+  - family-names: Adhikary
+    given-names: Subham
+    affiliation: Indian Institute of Technology Kharagpur
+    orcid: "https://orcid.org/0009-0007-9425-1749"
+  - family-names: Adhya
+    given-names: Suman
+    affiliation: TU Darmstadt
+    orcid: "https://orcid.org/0000-0001-6568-2020"
+  - family-names: Sanyal
+    given-names: Debarshi Kumar
+    affiliation: Indian Association for the Cultivation of Science
+    orcid: "https://orcid.org/0000-0001-8723-5002"
+keywords: [question answering, retrieval-augmented generation, benchmark, office memoranda, knowledge graph]

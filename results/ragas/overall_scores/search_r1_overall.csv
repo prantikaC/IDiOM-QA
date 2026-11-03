@@ -1,0 +1,2 @@
+Baseline,faithfulness,answer_relevancy,context_precision,context_recall,answer_similarity,answer_correctness
+search_r1,0.8411367380799695,0.7135196457561478,0.6459227467165237,0.7553887651926867,0.6819230403023884,0.5978868931539488

@@ -1,0 +1,2 @@
+Baseline,faithfulness,answer_relevancy,context_precision,context_recall,answer_similarity,answer_correctness
+hyde,0.7580725109571024,0.6292714360538311,0.6645569619588607,0.792788171743868,0.6236278016269556,0.5690316107376949
