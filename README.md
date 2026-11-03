@@ -38,5 +38,11 @@ Scoring: `scripts/evaluate_ragas_metrics.py` (RAGAS, judge deepseek-r1:32b via O
 All hyperparameters are in `code/config.py`.
 
 ## Licence
-Annotations, summaries, KG and results: CC-BY-4.0 (`DATA_LICENCE`). Code: MIT (`LICENSE`).
-The source OMs remain under the terms of their issuing bodies.
+- **Code** (`code/`): MIT, see `LICENSE`.
+- **Data and results** (`data/`, `results/`): Creative Commons Attribution 4.0 International
+  (CC-BY-4.0), see `LICENSE-DATA`, `data/LICENSE` and `results/LICENSE`.
+
+The OM texts in `data/corpus/` reproduce public documents issued by UGC, CSIR, IACS and
+Jadavpur University and remain subject to the terms of those bodies. CC-BY-4.0 applies to our
+own contributions: the questions and gold answers, the corrections to the transcriptions, the
+document summaries, the knowledge graph, the relevance judgements and the system results.
