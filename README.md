@@ -17,8 +17,6 @@ transcription, with the evidence highlighted. Filter by question type or search 
 ## Contents
 - `data/qa/idiom_qa_v4_paper.json`: the 475 QA pairs scored in the paper (91 Factoid, 89 Conceptual,
   92 Relational, 92 Multi-part, 71 Adversarial, 16 CrossHop, 13 Temporal, 11 Aggregation).
-  Six Temporal items are forecast questions (`temporal_kind: "predictive"`: Q437, Q439, Q442, Q444,
-  Q446, Q448); their gold answer summarises the revision history and declines to predict.
   Each item has `input`, `expected_output`, `question_type`, `source` (OM id) and
   `context_used` (gold evidence); CrossHop items also carry the two OMs and their evidence.
 - `data/corpus/<body>/<body>_om_text_files/`: hand-checked VLM transcriptions of all 116 OMs
