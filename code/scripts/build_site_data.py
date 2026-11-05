@@ -32,6 +32,8 @@ for i, r in enumerate(qs):
     ids += [r[k] for k in ("om_a_id", "om_b_id") if r.get(k)]
     ids += list(r.get("seed_docs") or [])
     ids = list(dict.fromkeys(ids))
+    if r["question_type"] == "Adversarial":
+        ids = []  # no OM answers these; the OM the generator started from is not evidence
     ids.sort(key=lambda d: oms[d]["date"])
     ev = {}
     for k, om in (("evidence_om_a", r.get("om_a_id")), ("evidence_om_b", r.get("om_b_id"))):

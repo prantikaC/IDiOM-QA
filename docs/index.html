@@ -103,7 +103,7 @@ mark.ev { background: var(--mark-ev); }
 <script>
 const TYPES = ["Factoid", "Conceptual", "Relational", "Multi-part", "Adversarial", "CrossHop", "Temporal", "Aggregation"];
 const NOTES = {
-  Adversarial: "The corpus does not answer this question, so the gold answer is a refusal. The OM shown is the one the question was written from.",
+  Adversarial: "No OM in the corpus answers this question, so the gold answer is a refusal and no source OM is shown.",
   CrossHop: "Needs one fact from each of two OMs that share an entity. The quoted evidence is highlighted in green.",
   Temporal: "Asks how a policy value changed across a date-ordered group of OMs, listed below from oldest to newest.",
   Aggregation: "Asks for a list of entities spread across several OMs, listed below by date."
@@ -205,7 +205,7 @@ function renderDetail(id) {
   if (!x) { $("#main").innerHTML = `<p class="empty">Select a question on the left.</p>`; return; }
   selected = id;
   document.querySelectorAll("#list li").forEach(li => li.setAttribute("aria-selected", +li.dataset.id === id));
-  const multi = x.oms.length > 1;
+  const multi = x.oms.length > 1, none = x.oms.length === 0;
   $("#main").innerHTML =
     `<div class="card">
        <span class="qid">Q${x.id}</span><span class="tag">${x.type}</span>
@@ -214,12 +214,13 @@ function renderDetail(id) {
        <div class="answer ${x.type === "Adversarial" ? "refusal" : ""}">${esc(x.a)}</div>
        ${NOTES[x.type] ? `<p class="note">${NOTES[x.type]}</p>` : ""}
      </div>
-     <div class="card">
+     ${none ? "" : `<div class="card">
        <div class="label">${multi ? `Source OMs (${x.oms.length})` : "Source OM"}</div>
        ${multi ? `<div class="omtabs">${x.oms.map(o => `<button class="omtab" data-om="${esc(o)}">${esc(o)} <small>${esc(DATA.oms[o].date)}</small></button>`).join("")}</div>` : ""}
        <div id="omview"></div>
        <div class="legend"><mark>yellow</mark> numbers from the gold answer${Object.keys(x.ev).length ? ' · <mark class="ev">green</mark> quoted evidence' : ""}</div>
-     </div>`;
+     </div>`}`;
+  if (none) return;
   renderOM(x, x.oms[0]);
   document.querySelectorAll(".omtab").forEach(b => b.onclick = () => renderOM(x, b.dataset.om));
   if (location.hash !== "#q=" + id) history.replaceState(null, "", "#q=" + id);
