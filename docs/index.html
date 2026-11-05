@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IDiOM-QA Explorer</title>
+<meta name="description" content="Browse the 475 IDiOM-QA questions and read the Office Memoranda each one was asked from.">
+<style>
+:root {
+  --bg: #f7f6f3; --panel: #ffffff; --ink: #1c1b19; --ink2: #55534e; --muted: #8a8780;
+  --line: #e4e2dc; --accent: #2a63c4; --accent-soft: #e6eefb; --mark: #fff0b3; --mark-ev: #d9f2e4;
+  --chip: #efede8; --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141413; --panel: #1d1d1b; --ink: #ecebe7; --ink2: #b6b3ac; --muted: #85827b;
+    --line: #2f2e2b; --accent: #7aa6f0; --accent-soft: #1f2a3d; --mark: #5a4d12; --mark-ev: #1f4a33; --chip: #2a2926;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141413; --panel: #1d1d1b; --ink: #ecebe7; --ink2: #b6b3ac; --muted: #85827b;
+  --line: #2f2e2b; --accent: #7aa6f0; --accent-soft: #1f2a3d; --mark: #5a4d12; --mark-ev: #1f4a33; --chip: #2a2926;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+header { padding: 16px 20px 12px; border-bottom: 1px solid var(--line); background: var(--panel); }
+header h1 { margin: 0; font-size: 19px; letter-spacing: .2px; }
+header p { margin: 2px 0 0; color: var(--ink2); font-size: 13.5px; }
+header a { color: var(--accent); }
+.app { display: grid; grid-template-columns: minmax(300px, 400px) 1fr; height: calc(100% - 70px); }
+.side { border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; background: var(--panel); }
+.controls { padding: 12px 14px 8px; border-bottom: 1px solid var(--line); }
+#search { width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font-size: 14.5px; }
+#search:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip { border: 1px solid var(--line); background: var(--chip); color: var(--ink2); border-radius: 999px; padding: 3px 10px; font-size: 12.5px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.count { color: var(--muted); font-size: 12.5px; margin-top: 8px; }
+#list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
+#list li { padding: 10px 14px; border-bottom: 1px solid var(--line); cursor: pointer; }
+#list li:hover { background: var(--bg); }
+#list li[aria-selected="true"] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+.qid { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 11.5px; padding: 1px 7px; border-radius: 4px; background: var(--chip); color: var(--ink2); margin-left: 6px; }
+.qtext { margin-top: 2px; font-size: 14px; }
+.main { overflow-y: auto; min-height: 0; padding: 20px 26px 40px; }
+.empty { color: var(--muted); margin-top: 40px; text-align: center; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; }
+.card h2 { margin: 6px 0 10px; font-size: 18px; line-height: 1.4; }
+.label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-top: 12px; }
+.answer { margin-top: 4px; color: var(--ink); white-space: pre-wrap; }
+.refusal { color: var(--ink2); font-style: italic; }
+.omtabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 12px; }
+.omtab { border: 1px solid var(--line); background: var(--bg); color: var(--ink2); border-radius: 6px; padding: 4px 9px; font-size: 12.5px; cursor: pointer; text-align: left; }
+.omtab[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.omtab small { color: var(--muted); }
+.ommeta { display: flex; flex-wrap: wrap; gap: 14px; color: var(--ink2); font-size: 13px; margin-bottom: 10px; }
+.ommeta a { color: var(--accent); }
+.omtext { font-family: var(--mono); font-size: 12.8px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 14px; max-height: 70vh; overflow-y: auto; }
+mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+mark.ev { background: var(--mark-ev); }
+.legend { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+.legend mark { font-family: inherit; }
+.note { color: var(--ink2); font-size: 13.5px; }
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; height: auto; }
+  .side { border-right: 0; border-bottom: 1px solid var(--line); }
+  #list { max-height: 45vh; }
+  .main { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>IDiOM-QA Explorer</h1>
+  <p>Pick a question to read the Office Memorandum it was asked from. Data:
+    <a href="https://github.com/prantikaC/IDiOM-QA">github.com/prantikaC/IDiOM-QA</a> ·
+    <a href="https://doi.org/10.5281/zenodo.23916568">doi:10.5281/zenodo.23916568</a></p>
+</header>
+<div class="app">
+  <aside class="side">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search questions, answers or OM ids…" aria-label="Search questions">
+      <div class="chips" id="chips" role="group" aria-label="Filter by question type"></div>
+      <div class="count" id="count"></div>
+    </div>
+    <ul id="list" role="listbox" aria-label="Questions"></ul>
+  </aside>
+  <main class="main" id="main"><p class="empty">Loading…</p></main>
+</div>
+<script>
+const TYPES = ["Factoid", "Conceptual", "Relational", "Multi-part", "Adversarial", "CrossHop", "Temporal", "Aggregation"];
+const NOTES = {
+  Adversarial: "The corpus does not answer this question, so the gold answer is a refusal. The OM shown is the one the question was written from.",
+  CrossHop: "Needs one fact from each of two OMs that share an entity. The quoted evidence is highlighted in green.",
+  Temporal: "Asks how a policy value changed across a date-ordered group of OMs, listed below from oldest to newest.",
+  Aggregation: "Asks for a list of entities spread across several OMs, listed below by date."
+};
+let DATA = null, active = new Set(TYPES), selected = null;
+
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+function highlight(text, evidence, answer) {
+  // Mark the CrossHop evidence quotes (green) and the numbers/amounts of the gold answer (yellow).
+  const spans = [];
+  for (const ev of evidence) {
+    for (const part of ev.split(/\s*;\s*|\s*\n\s*/)) {
+      const p = part.trim();
+      if (p.length < 12) continue;
+      const i = text.indexOf(p);
+      if (i >= 0) spans.push([i, i + p.length, "ev"]);
+    }
+  }
+  // Amounts, dates and reference numbers; bare years are too common to be useful.
+  const nums = new Set((answer.match(/\d[\d,./-]*\d{2,}|\d{3,}/g) || [])
+    .filter(n => n.replace(/\D/g, "").length >= 3 && !/^(19|20)\d\d$/.test(n)));
+  for (const n of nums) {
+    const re = new RegExp(reEsc(n), "g"); let m;
+    while ((m = re.exec(text))) spans.push([m.index, m.index + n.length, "num"]);
+  }
+  spans.sort((a, b) => a[0] - b[0] || b[1] - a[1]);
+  let out = "", pos = 0;
+  for (const [s, e, k] of spans) {
+    if (s < pos) continue;
+    out += esc(text.slice(pos, s)) + `<mark class="${k}">` + esc(text.slice(s, e)) + "</mark>";
+    pos = e;
+  }
+  return out + esc(text.slice(pos));
+}
+
+function filtered() {
+  const q = $("#search").value.trim().toLowerCase();
+  return DATA.questions.filter(x => active.has(x.type) &&
+    (!q || x.q.toLowerCase().includes(q) || x.a.toLowerCase().includes(q) ||
+     x.oms.some(o => o.toLowerCase().includes(q)) || String(x.id) === q));
+}
+
+function renderChips() {
+  const counts = Object.fromEntries(TYPES.map(t => [t, DATA.questions.filter(x => x.type === t).length]));
+  $("#chips").innerHTML = `<button class="chip" data-t="__all" aria-pressed="${active.size === TYPES.length}">All</button>` +
+    TYPES.map(t => `<button class="chip" data-t="${t}" aria-pressed="${active.has(t) && active.size !== TYPES.length}">${t} ${counts[t]}</button>`).join("");
+}
+
+function renderList() {
+  const items = filtered();
+  $("#count").textContent = `${items.length} of ${DATA.questions.length} questions`;
+  $("#list").innerHTML = items.map(x =>
+    `<li role="option" data-id="${x.id}" aria-selected="${selected === x.id}">
+       <span class="qid">Q${x.id}</span><span class="tag">${x.type}</span>
+       <div class="qtext">${esc(x.q)}</div></li>`).join("");
+}
+
+function renderOM(x, omId) {
+  const om = DATA.oms[omId];
+  const url = "https://github.com/prantikaC/IDiOM-QA/blob/main/" + om.path.split("/").map(encodeURIComponent).join("/");
+  $("#omview").innerHTML =
+    `<div class="ommeta"><span><b>${esc(omId)}</b></span><span>${esc(om.body)}</span><span>Issued ${esc(om.date)}</span>
+       <a href="${url}" target="_blank" rel="noopener">Open file on GitHub</a></div>
+     <div class="omtext">${highlight(om.text, x.ev[omId] || [], x.type === "Adversarial" ? "" : x.a)}</div>`;
+  document.querySelectorAll(".omtab").forEach(b => b.setAttribute("aria-pressed", b.dataset.om === omId));
+}
+
+function renderDetail(id) {
+  const x = DATA.questions.find(q => q.id === id);
+  if (!x) { $("#main").innerHTML = `<p class="empty">Select a question on the left.</p>`; return; }
+  selected = id;
+  document.querySelectorAll("#list li").forEach(li => li.setAttribute("aria-selected", +li.dataset.id === id));
+  const multi = x.oms.length > 1;
+  $("#main").innerHTML =
+    `<div class="card">
+       <span class="qid">Q${x.id}</span><span class="tag">${x.type}</span>
+       <h2>${esc(x.q)}</h2>
+       <div class="label">Gold answer</div>
+       <div class="answer ${x.type === "Adversarial" ? "refusal" : ""}">${esc(x.a)}</div>
+       ${NOTES[x.type] ? `<p class="note">${NOTES[x.type]}</p>` : ""}
+     </div>
+     <div class="card">
+       <div class="label">${multi ? `Source OMs (${x.oms.length})` : "Source OM"}</div>
+       ${multi ? `<div class="omtabs">${x.oms.map(o => `<button class="omtab" data-om="${esc(o)}">${esc(o)} <small>${esc(DATA.oms[o].date)}</small></button>`).join("")}</div>` : ""}
+       <div id="omview"></div>
+       <div class="legend"><mark>yellow</mark> numbers from the gold answer${Object.keys(x.ev).length ? ' · <mark class="ev">green</mark> quoted evidence' : ""}</div>
+     </div>`;
+  renderOM(x, x.oms[0]);
+  document.querySelectorAll(".omtab").forEach(b => b.onclick = () => renderOM(x, b.dataset.om));
+  if (location.hash !== "#q=" + id) history.replaceState(null, "", "#q=" + id);
+}
+
+fetch("data.json").then(r => r.json()).then(d => {
+  DATA = d;
+  renderChips(); renderList();
+  const m = location.hash.match(/q=(\d+)/);
+  renderDetail(m ? +m[1] : null);
+  $("#search").oninput = renderList;
+  $("#chips").onclick = e => {
+    const t = e.target.dataset && e.target.dataset.t; if (!t) return;
+    if (t === "__all") active = new Set(TYPES);
+    else active = (active.size === 1 && active.has(t)) ? new Set(TYPES) : new Set([t]);
+    renderChips(); renderList();
+  };
+  $("#list").onclick = e => { const li = e.target.closest("li"); if (li) renderDetail(+li.dataset.id); };
+}).catch(() => { $("#main").innerHTML = `<p class="empty">Could not load data.json.</p>`; });
+</script>
+</body>
+</html>
