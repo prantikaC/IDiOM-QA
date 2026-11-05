@@ -23,12 +23,14 @@
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
-body { background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-header { padding: 16px 20px 12px; border-bottom: 1px solid var(--line); background: var(--panel); }
+body { display: flex; flex-direction: column; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+header { padding: 16px 20px 12px; border-bottom: 1px solid var(--line); background: var(--panel); display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; }
+#theme { flex: none; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 8px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+#theme:hover { border-color: var(--accent); }
 header h1 { margin: 0; font-size: 19px; letter-spacing: .2px; }
 header p { margin: 2px 0 0; color: var(--ink2); font-size: 13.5px; }
 header a { color: var(--accent); }
-.app { display: grid; grid-template-columns: minmax(300px, 400px) 1fr; height: calc(100% - 70px); }
+.app { display: grid; grid-template-columns: minmax(300px, 400px) 1fr; flex: 1; min-height: 0; }
 .side { border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; background: var(--panel); }
 .controls { padding: 12px 14px 8px; border-bottom: 1px solid var(--line); }
 #search { width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font-size: 14.5px; }
@@ -68,7 +70,9 @@ mark.ev { background: var(--mark-ev); }
 .legend mark { font-family: inherit; }
 .note { color: var(--ink2); font-size: 13.5px; }
 @media (max-width: 760px) {
-  .app { grid-template-columns: 1fr; height: auto; }
+  header { flex-wrap: wrap; }
+  body { display: block; height: auto; }
+  .app { grid-template-columns: 1fr; }
   .side { border-right: 0; border-bottom: 1px solid var(--line); }
   #list { max-height: 45vh; }
   .main { padding: 16px; }
@@ -77,10 +81,13 @@ mark.ev { background: var(--mark-ev); }
 </head>
 <body>
 <header>
+ <div>
   <h1>IDiOM-QA Explorer</h1>
   <p>Pick a question to see the Office Memorandum it was asked from, as the original PDF or as our transcription. Data:
     <a href="https://github.com/prantikaC/IDiOM-QA">github.com/prantikaC/IDiOM-QA</a> ·
     <a href="https://doi.org/10.5281/zenodo.23916568">doi:10.5281/zenodo.23916568</a></p>
+ </div>
+ <button id="theme" type="button" aria-label="Switch colour theme">Theme: Auto</button>
 </header>
 <div class="app">
   <aside class="side">
@@ -102,6 +109,23 @@ const NOTES = {
   Aggregation: "Asks for a list of entities spread across several OMs, listed below by date."
 };
 let DATA = null, active = new Set(TYPES), selected = null;
+
+// Theme: Auto follows the system setting; Light and Dark override it. The choice is remembered when storage is allowed.
+const THEMES = ["auto", "light", "dark"];
+function applyTheme(th) {
+  if (th === "auto") document.documentElement.removeAttribute("data-theme");
+  else document.documentElement.setAttribute("data-theme", th);
+  document.getElementById("theme").textContent = "Theme: " + th[0].toUpperCase() + th.slice(1);
+}
+let theme = "auto";
+try { theme = localStorage.getItem("idiomqa-theme") || "auto"; } catch (e) {}
+if (!THEMES.includes(theme)) theme = "auto";
+applyTheme(theme);
+document.getElementById("theme").onclick = () => {
+  theme = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length];
+  applyTheme(theme);
+  try { localStorage.setItem("idiomqa-theme", theme); } catch (e) {}
+};
 
 const $ = s => document.querySelector(s);
 const esc = s => s.replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
