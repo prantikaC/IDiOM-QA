@@ -170,6 +170,8 @@ def run(dataset_path: str = DEFAULT_EVAL_FILE,
                 "cypher_queries":       [],
                 "total_retries":        0,
                 "all_agent_sources":    [],
+                "top_doc_sources":      [],
+                "subtask_sources":      [],
                 "rewrite_count":        0,
                 "task_variants":        [],
                 # New fields (added with architecture improvements)
@@ -200,6 +202,11 @@ def run(dataset_path: str = DEFAULT_EVAL_FILE,
                 cypher_queries       = final_state.get("cypher_queries", [])
                 total_retries        = final_state.get("total_retries", 0)
                 all_agent_sources    = list(set(final_state.get("all_agent_sources", [])))
+                subtask_sources      = final_state.get("subtask_sources", [])
+                # The OMs IDiOM-RAG found its answer in, per resolved sub-task, in order.
+                source_oms = list(dict.fromkeys(om for s in subtask_sources
+                                                for om in s.get("answer_oms") or [s.get("answer_om")] if om))
+                print(f"  -> Source OMs: {', '.join(source_oms) or 'none (refused or unresolved)'}")
                 task_variants        = final_state.get("task_variants", [])
                 rerank_score_log     = _finite_or_none(final_state.get("rerank_score_log", []))
                 gate_fired_log        = final_state.get("gate_fired_log", [])
@@ -213,6 +220,8 @@ def run(dataset_path: str = DEFAULT_EVAL_FILE,
                     "subtask_contexts":     subtask_contexts,
                     "total_retries":        total_retries,
                     "all_agent_sources":    all_agent_sources,
+                    "source_oms":           source_oms,
+                    "subtask_sources":      subtask_sources,
                     "cypher_queries":       cypher_queries,
                     "task_variants":        task_variants,
                     "rerank_score_log":     rerank_score_log,
@@ -233,6 +242,8 @@ def run(dataset_path: str = DEFAULT_EVAL_FILE,
                     "subtask_contexts":     [],
                     "total_retries":        0,
                     "all_agent_sources":    [],
+                    "source_oms":           [],
+                    "subtask_sources":      [],
                     "cypher_queries":       [],
                     "task_variants":        [],
                     "rerank_score_log":     [],
@@ -258,6 +269,8 @@ def run(dataset_path: str = DEFAULT_EVAL_FILE,
             "subtask_contexts":       entry.get("subtask_contexts", []),
             "total_retries":          entry.get("total_retries", 0),
             "all_agent_sources":      entry.get("all_agent_sources", []),
+            "source_oms":             entry.get("source_oms", []),
+            "subtask_sources":        entry.get("subtask_sources", []),
             "cypher_queries":         entry.get("cypher_queries", []),
             "task_variants":          entry.get("task_variants", []),
             "rerank_score_log":       entry.get("rerank_score_log", []),

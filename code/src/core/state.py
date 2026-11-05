@@ -55,6 +55,12 @@ class MultiAgentRAGState(TypedDict):
     # Agent attribution — accumulates across all retrieval passes (gathered_context is wiped per sub-task)
     all_agent_sources: Annotated[List[str], operator.add]
 
+    # OM attribution. The reranker writes the OM of each chunk it keeps (replaced every pass);
+    # the critic records, per resolved sub-task, the OM its accepted fact came from and every
+    # OM in the accepted context: {"task", "fact", "answer_om", "context_oms"}.
+    top_doc_sources: List[dict]
+    subtask_sources: Annotated[List[dict], operator.add]
+
     # Corrective query-rewriting — fires when same-query retries are exhausted.
     # rewrite_count is reset to 0 between sub-tasks (alongside loop_count) and
     # capped by config.MAX_REWRITES. task_variants accumulates every rewritten

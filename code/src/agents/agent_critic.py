@@ -3,7 +3,41 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.language_models import BaseChatModel
 from src.core.state import MultiAgentRAGState
 from src.prompts.critic_prompt import CRITIC_SYSTEM_PROMPT, CRITIC_SYSTEM_PROMPT_ENTITY_CHECK
+import re
 import config
+
+
+def attribute_fact(fact: str, docs: list) -> list:
+    """OMs of the kept chunks the critic's accepted fact came from, best match first.
+    Word overlap, with numbers and dates (amounts, order numbers) counted three times,
+    since they identify the right notice among near-identical siblings. A fact that
+    merges values from several notices also gets the OM of each value the best
+    match does not contain (bare years and short numbers are too common to count)."""
+    words = lambda s: set(re.findall(r"[a-z]{3,}|\d[\d,./-]*", s.lower()))
+    fw = words(fact)
+    scored = []
+    for d in docs:
+        if not d.get("om"):
+            continue
+        dw = words(d.get("text", ""))
+        shared = fw & dw
+        scored.append((sum(3 if w[0].isdigit() else 1 for w in shared), d["om"], dw))
+    scored = sorted((s for s in scored if s[0] > 0), key=lambda s: -s[0])
+    if not scored:
+        return []
+    oms, covered = [scored[0][1]], set(scored[0][2])
+    values = [w for w in fw if w[0].isdigit() and len(w.strip(",./-")) >= 4
+              and not re.fullmatch(r"(19|20)\d\d", w)]
+    for v in values:
+        if v in covered:
+            continue
+        for _, om, dw in scored:
+            if v in dw:
+                if om not in oms:
+                    oms.append(om)
+                covered |= dw
+                break
+    return oms
 
 # 1. Define the Structured Output Schema
 class CriticDecision(BaseModel):
@@ -133,9 +167,16 @@ def get_critic_agent(fast_llm: BaseChatModel, reasoning_llm: BaseChatModel,
             next_plan = plan.copy()
             if next_plan:
                 next_plan.pop(0)
+            kept = state.get("top_doc_sources") or []
+            answer_oms = attribute_fact(fact, kept)
+            source = {"task": current_task, "fact": fact,
+                      "answer_om": answer_oms[0] if answer_oms else "",
+                      "answer_oms": answer_oms,
+                      "context_oms": list(dict.fromkeys(d["om"] for d in kept if d.get("om")))}
             return {
                 "plan": next_plan,
                 "past_steps": [(current_task, fact)],
+                "subtask_sources": [source],
                 "subtask_contexts": [context_text],
                 "loop_count":    0,
                 "rewrite_count": 0,

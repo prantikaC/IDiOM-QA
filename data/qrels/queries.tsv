@@ -47,7 +47,7 @@ q045	Factoid	What is the revised monthly fellowship amount for a Ph.D. candidate
 q046	Conceptual	What is the policy regarding the payment of arrears to Principal Investigators following the revision of fellowships under the WISE-KIRAN Division?
 q047	Relational	Which authority approved the revision of fellowships under the WISE-KIRAN Division and who heads the WISE-KIRAN Division?
 q048	Multi-part	What are the revised fellowship amounts for candidates with M.Sc./B.Tech./MBBS qualifications under both the WISE-IPR and WOS-A programmes, and from which date are these revised emoluments effective?
-q049	Adversarial	What is the WISE-KIRAN Division's stance on increasing fellowship amounts beyond the current revision in the next fiscal year?
+q049	Adversarial	What maternity leave can a woman scientist holding a WOS-A fellowship under the WISE-KIRAN Division take?
 q050	Conceptual	What is the policy regarding the duration for which the WISE-PhD fellowship amount remains fixed during the project?
 q051	Relational	Which division within the Department of Science and Technology issues and oversees the WISE Fellowship for Ph.D. programme?
 q052	Multi-part	What are the two key changes mentioned in the 2023 revision of the WISE-PhD fellowship, including the effective date and the approval authority?
@@ -99,7 +99,7 @@ q097	Relational	Which institute and department is responsible for issuing the ad
 q098	Multi-part	What is the duration and extension policy for the Project Associate-II position at the School of Chemical Sciences, IACS, and how is the continuation of the appointment determined?
 q099	Conceptual	What are the eligibility criteria regarding academic qualifications and research experience for applying to the Research Associate-I position in Astro-particle Physics at IACS?
 q100	Multi-part	What is the procedure for candidates who have not yet received their Ph.D. degree but wish to apply for the Research Associate-I position at IACS, and what is the tenure and evaluation policy for the fellowship?
-q101	Factoid	What is the policy on travel allowance for candidates attending the interview for the Research Associate-I position in the School of Physical Sciences at IACS?
+q101	Adversarial	What medical insurance cover does IACS provide to the Research Associate-I selected in the School of Physical Sciences?
 q102	Factoid	What is the minimum educational qualification required for the Research Associate position in Nanoelectronic and Optoelectronic Devices at IACS?
 q103	Conceptual	What is the policy regarding candidates who have submitted their Ph.D. thesis but are awaiting the award of the degree for the Research Associate position at IACS?
 q104	Factoid	What is the essential qualification related to reaction kinetics expertise required for the Research Associate-I position in the School of Chemical Sciences at IACS?
@@ -229,7 +229,7 @@ q227	Multi-part	What is the procedure for candidates to attend the Guest Lecture
 q228	Factoid	What is the monthly fellowship amount for the student interns selected under Post A in the DVC Sponsored Research Project on Retro-fitted Electric Mobility at Jadavpur University's Department of Power Engineering?
 q229	Conceptual	What are the essential qualifications required for candidates applying for the Post B student intern position under the DVC Sponsored Research Project on Retro-fitted Electric Mobility at Jadavpur University?
 q230	Relational	Who are the principal investigators and co-principal investigators responsible for supervising the student interns under the DVC Sponsored Research Project on Retro-fitted Electric Mobility at Jadavpur University?
-q231	Conceptual	What is the policy of the DVC Sponsored Research Project on Retro-fitted Electric Mobility at Jadavpur University regarding reimbursement of travel expenses for candidates attending the selection interview?
+q231	Adversarial	Will the student interns under the DVC Sponsored Research Project on Retro-fitted Electric Mobility at Jadavpur University receive an internship completion certificate?
 q232	Factoid	What is the scheduled date and time for the interview of candidates applying for the Driver (for Ambulance at Salt Lake Campus) contractual post at Jadavpur University?
 q233	Adversarial	What is the policy of Jadavpur University regarding the recruitment of drivers for ambulance services at Salt Lake Campus in other Indian universities like IIT-Kharagpur?
 q234	Conceptual	What are the essential qualifications and age relaxation criteria for applying to the Junior Research Fellow position under Prof. Runu Banerjee Roy at Jadavpur University?
@@ -255,7 +255,7 @@ q253	Factoid	What is the fellowship amount offered for the Project Technical Sup
 q254	Conceptual	What are the eligibility criteria regarding qualification and age for the Project Technical Support-III post in the ICMR sponsored project at Jadavpur University's Department of Pharmaceutical Technology?
 q255	Relational	Which institutions and principal investigators are involved in the supervision of the ICMR sponsored New Extramural Small Grants project on non-antibiotic loaded mucoadhesive gastroretentive tablets at Jadavpur University?
 q256	Multi-part	What is the procedure for applying to the Project Technical Support-III position in the ICMR sponsored project at Jadavpur University, and what documents must candidates bring to the walk-in interview?
-q257	Factoid	What is the policy of Jadavpur University regarding travel allowance or dearness allowance for candidates attending the walk-in interview for the Project Technical Support-III post in the Department of Pharmaceutical Technology?
+q257	Adversarial	Is the Project Technical Support-III post in the Department of Pharmaceutical Technology at Jadavpur University covered by the Employees' Provident Fund?
 q258	Relational	Which authority at Jadavpur University is responsible for announcing the cancellation of the walk-in interview for the Junior Research Fellow position in the Department of Life Science and Biotechnology?
 q259	Adversarial	What is the policy of Jadavpur University's Department of Life Science and Biotechnology regarding the future scheduling of walk-in interviews for Junior Research Fellow positions?
 q260	Factoid	What is the monthly fellowship amount offered for the Research Assistant position in the ICSSR-sanctioned project at Jadavpur University's Department of Economics?
@@ -340,7 +340,7 @@ q338	Factoid	What is the maximum pay scale for officers entitled to travel in Bu
 q339	Conceptual	What is the UGC's policy regarding the class of air travel for officers on official tours within India?
 q340	Relational	Which Ministry's instruction does the UGC's air travel policy for officers follow, and who must comply with these instructions within UGC?
 q341	Multi-part	According to the UGC air travel instructions, what are the authorized sources from which lowest fare air tickets must be purchased, and how should experts invited to UGC meetings be informed about the travel provisions?
-q342	Conceptual	What is the UGC's policy on air travel for officers visiting IIT-Kharagpur on official duty?
+q342	Adversarial	What is the UGC's limit for reimbursing taxi fares of experts invited to UGC meetings?
 q343	Factoid	Who was appointed to discharge the duties and responsibilities of the Secretary, UGC, in place of Dr. Niloufer A. Kazmi?
 q344	Conceptual	How did the University Grants Commission arrange for the duties of its Secretary to be discharged in October 2012, until a regular Secretary joined?
 q345	Relational	Which position at the University Grants Commission has the authority to approve the appointment of an acting Secretary?
@@ -348,7 +348,7 @@ q346	Factoid	What is the revised rate of Dearness Allowance (DA) for Central Gov
 q347	Conceptual	According to the University Grants Commission circular on DA revision, how is the term 'Basic Pay' defined and what types of pay are excluded from it?
 q348	Relational	Which government department issued the revised Dearness Allowance rates that the University Grants Commission circulated, and which ministries are responsible for separate orders regarding Armed Forces and Railway employees?
 q349	Multi-part	According to the University Grants Commission circular and the Ministry of Finance Office Memorandum, what is the policy on rounding off DA payments involving fractions, and when can arrears of DA be paid?
-q350	Adversarial	What are the University Grants Commission's future plans regarding further enhancements to the Dearness Allowance rates beyond the 34% effective from January 2022?
+q350	Adversarial	What Dearness Allowance rate did the UGC set for teachers of State Government universities from 1 January 2022?
 q351	Factoid	What is the last date for sending the complete proposal along with relevant Recruitment/Service Rules to the UPSC for ACC cases in the calendar year 2019 according to the UGC circular on Departmental Promotion Committees?
 q352	Conceptual	According to the UGC circular on Departmental Promotion Committees, what is the new rule for the crucial date of eligibility for DPCs starting from 2019?
 q353	Relational	Which government body issues the procedure and model calendar for Departmental Promotion Committees that the UGC circular refers to, and which body is responsible for receiving the DPC proposals?
@@ -435,18 +435,18 @@ q433	Multi-part	According to the UGC circular and the Government of India order 
 q434	Relational	Which section of the University Grants Commission is responsible for receiving the asset declarations from employees and reporting the compliance to the Central Vigilance Commission?
 q435	Adversarial	What is the UGC policy on employees declaring their cryptocurrency holdings as part of their movable property?
 q436	Temporal	How have the fellowship amounts for Junior Research Fellows (JRF) evolved across different institutes and programs from 2022 to 2025, including specific amounts and any notable patterns in increments or allowances?
-q437	Temporal	What will be the Junior Research Fellowship (JRF) rates and rules at Jadavpur University and IACS in 2026?
+q437	Temporal	When is the current walk-in interview for Guest Faculty in the M.A. in Journalism and Mass Communication course of the Department of Adult, Continuing Education & Extension, Jadavpur University?
 q438	Temporal	How did the Dearness Allowance (DA) rate for Central Government employees change between 2012 and 2024 according to the circulars, and what were the key revision dates and percentage increases?
-q439	Temporal	Based on the past trends of DA revisions, what will be the next DA rate revision and when will it occur?
+q439	Temporal	What is the current rate of Dearness Allowance for Central Government employees?
 q440	Temporal	How has the House Rent Allowance (HRA) percentage for Junior Research Fellows (JRF) at Jadavpur University changed from 2024 to mid-2025, and what are the typical HRA rates applied in these fellowships?
 q441	Temporal	How has the rate of Dearness Relief for Central Government pensioners changed over time according to the documents, and what were the specific rates at key points?
-q442	Temporal	What will be the rate of Dearness Relief for Central Government pensioners after July 2024?
+q442	Temporal	What is the current rate of Dearness Relief for Central Government pensioners and family pensioners?
 q443	Temporal	What role does the Director-General of CSIR play in the transfers, committee constitution and guideline changes recorded in the timeline (April-May 2025)?
-q444	Temporal	When is the next appointment or change expected for the CSIR Director-General or Chairman position?
+q444	Temporal	Where is Sh. P.M. Verma, COSP, currently posted?
 q445	Temporal	How have the fellowship amounts and eligibility criteria for ANRF-funded research positions evolved across different institutes and projects in 2025?
-q446	Temporal	What will be the fellowship amount and eligibility criteria for ANRF research positions in 2026?
+q446	Temporal	What is the current name of the funding agency, formerly DST-SERB, that funds the 2025 research positions advertised at Jadavpur University?
 q447	Temporal	How did the administrative and regulatory circulars that UGC issued to its offices (with copies to the UGC NET Bureau) evolve from 2015 to 2024?
-q448	Temporal	What changes can we expect in the UGC-NET examination eligibility criteria or related administrative procedures in the next five years?
+q448	Temporal	For which year must UGC employees currently file their return of immovable and movable property, and by what date?
 q449	Aggregation	Which departments at IACS currently have positions funded under SERB projects, and what are the details of these positions including the type of position, project title or PI, and duration?
 q450	Aggregation	Which departments or research groups at IACS advertised DST-funded positions such as Research Associates or Postdoctoral Research Associates in 2025, and under which projects and supervisors are these positions offered?
 q451	Aggregation	Which departments at Jadavpur University currently have SERB-funded projects with positions available, and what are the details of these positions including project titles, supervisors, and types of positions?
@@ -459,9 +459,9 @@ q457	Aggregation	Can you provide a list of all the faculty and research position
 q458	Aggregation	Can you provide a detailed list of all Junior Research Fellow (JRF) and Senior Research Fellow (SRF) positions currently available at Jadavpur University, specifying the department, project title, supervisor name, essential qualifications, and any other relevant details such as fellowship amount and project duration?
 q459	Aggregation	Which departments at Jadavpur University are currently recruiting guest faculty, project assistants, junior research fellows, or student interns, and what are the specific positions, projects, supervisors, and qualifications involved?
 q460	CrossHop	What are the differences in the duration and fellowship amount between the student intern and Junior Research Fellow positions under the DVC Sponsored Research Project on Retro-fitted Electric Mobility?
-q461	CrossHop	What is the revised monthly fellowship amount for a Junior Research Fellow under the WISE-PhD programme, and how does it compare to the fellowship offered for a DRDO-funded JRF position at Jadavpur University in 2025?
-q462	CrossHop	What is the revised monthly fellowship amount under the WISE-PhD programme effective from January 2023, and what is the honorarium per class offered for Guest Lecturers in the Department of History at Jadavpur University?
-q463	CrossHop	What is the revised monthly fellowship amount for a WISE-PhD fellow, and how does the fellowship for a Project Associate – II/SRF under the SERB POWER GRANT PROJECT at Jadavpur University compare in terms of payment structure?
+q461	CrossHop	How did the essential qualification for the Junior Research Fellow post in Prof. Runu Banerjee Roy's CSIR-ASPIRE project on MIP-based electrochemical trace detection of pesticides change between the January 2025 and April 2025 notices?
+q462	CrossHop	Who was discharging the duties of the Secretary, UGC from October 2012, and when did the regular Secretary take charge to end that arrangement?
+q463	CrossHop	What research areas and application deadlines do the two Research Associate-I positions advertised by the School of Physical Sciences, IACS on 10 May 2025 and 16 May 2025 have?
 q464	CrossHop	What are the differences in duration and monthly fellowship amount between the student interns and Junior Research Fellows working under Prof. Amitava Gupta on the Retro-fitted Electric Mobility project?
 q465	CrossHop	What are the different types of research positions available under the DVC Sponsored Research Project supervised by Prof. Amitava Gupta, and how do their qualifications and stipends compare?
 q466	CrossHop	What are the different types of positions available under the DVC Sponsored Research Project on Retro-fitted Electric Mobility supervised by Dr. Nirmalendu Biswas, and how do their qualifications and fellowship amounts compare?

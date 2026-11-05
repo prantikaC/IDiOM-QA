@@ -30,7 +30,7 @@ for i, r in enumerate(qs):
     if r.get("source") and ":" not in r["source"]:
         ids.append(r["source"])
     ids += [r[k] for k in ("om_a_id", "om_b_id") if r.get(k)]
-    ids += list(r.get("seed_docs") or [])
+    ids += list(r.get("evidence_oms") or r.get("seed_docs") or [])
     ids = list(dict.fromkeys(ids))
     if r["question_type"] == "Adversarial":
         ids = []  # no OM answers these; the OM the generator started from is not evidence
@@ -39,8 +39,11 @@ for i, r in enumerate(qs):
     for k, om in (("evidence_om_a", r.get("om_a_id")), ("evidence_om_b", r.get("om_b_id"))):
         if r.get(k) and om:
             ev.setdefault(om, []).append(r[k])
-    out.append({"id": i + 1, "type": r["question_type"], "q": r["input"], "a": r["expected_output"],
-                "oms": ids, "ev": ev})
+    item = {"id": i + 1, "type": r["question_type"], "q": r["input"], "a": r["expected_output"],
+            "oms": ids, "ev": ev}
+    if r.get("temporal_kind") == "predictive":
+        item["forecast"] = True  # Temporal forecast: summarise the history, decline to project
+    out.append(item)
 
 json.dump({"questions": out, "oms": oms}, open(os.path.join(root, "docs/data.json"), "w", encoding="utf-8"),
           ensure_ascii=False, separators=(",", ":"))

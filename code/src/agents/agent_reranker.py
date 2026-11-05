@@ -1,4 +1,5 @@
 import math
+import os
 
 from sentence_transformers import CrossEncoder
 from src.core.state import MultiAgentRAGState
@@ -37,7 +38,7 @@ def get_reranker_agent(model_name: str = "cross-encoder/ms-marco-MiniLM-L-6-v2",
         if not raw_docs:
             print("--- [Reranker Agent] No context gathered by agents. ---")
             return {"final_context_string": "No relevant information found.",
-                    "top_rerank_score": float("-inf")}
+                    "top_rerank_score": float("-inf"), "top_doc_sources": []}
 
         # ===========================
         # Deduplicate & Merge Sources
@@ -122,6 +123,13 @@ def get_reranker_agent(model_name: str = "cross-encoder/ms-marco-MiniLM-L-6-v2",
         # critic compares against CRITIC_ACCEPT_SCORE (raw logit scale).
         top_score = top_docs[0].metadata["rerank_score"] if top_docs else float("-inf")
 
-        return {"final_context_string": formatted_context, "top_rerank_score": top_score}
+        # OM of each kept chunk: text chunks carry source_file, KG facts carry source_om.
+        def _om(d):
+            om = d.metadata.get("source_om") or d.metadata.get("source_file") or ""
+            return os.path.splitext(os.path.basename(om))[0]
+        top_doc_sources = [{"om": _om(d), "text": d.page_content} for d in top_docs]
+
+        return {"final_context_string": formatted_context, "top_rerank_score": top_score,
+                "top_doc_sources": top_doc_sources}
 
     return reranker_agent

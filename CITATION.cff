@@ -3,6 +3,7 @@ message: "If you use IDiOM-QA, please cite it as below."
 title: "IDiOM-QA: A Dataset for Question Answering on Office Memoranda for Indian Research and Educational Institutions"
 version: 1.0.0
 license: CC-BY-4.0
+doi: 10.5281/zenodo.23916568
 repository-code: "https://github.com/prantikaC/IDiOM-QA"
 authors:
   - family-names: Chakraborty

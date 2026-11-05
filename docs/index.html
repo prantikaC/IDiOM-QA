@@ -42,8 +42,18 @@ header a { color: var(--accent); }
 #list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
 #list li { padding: 10px 14px; border-bottom: 1px solid var(--line); cursor: pointer; }
 #list li:hover { background: var(--bg); }
-#list li[aria-selected="true"] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+#list li[aria-selected="true"] { background: var(--accent-soft); }
 .qid { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.tag.fc { background: var(--accent-soft); color: var(--accent); border-left-color: var(--accent); }
+.t-Factoid { --c: #2a78d6; } .t-Conceptual { --c: #1baf7a; } .t-Relational { --c: #6250d6; }
+.t-Multi-part { --c: #eda100; } .t-Adversarial { --c: #e34948; } .t-CrossHop { --c: #eb6834; }
+.t-Temporal { --c: #008300; } .t-Aggregation { --c: #e87ba4; }
+.tag[class*="t-"] { background: color-mix(in srgb, var(--c) 16%, var(--panel)); border-left: 3px solid var(--c); color: var(--ink); }
+.chip[class*="t-"]::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--c); margin-right: 6px; vertical-align: 1px; }
+.chip[class*="t-"][aria-pressed="true"] { background: var(--c); border-color: var(--c); color: #fff; }
+.chip[class*="t-"][aria-pressed="true"]::before { background: #fff; }
+#list li { border-left: 3px solid transparent; }
+#list li[class*="t-"] { border-left-color: var(--c); }
 .tag { display: inline-block; font-size: 11.5px; padding: 1px 7px; border-radius: 4px; background: var(--chip); color: var(--ink2); margin-left: 6px; }
 .qtext { margin-top: 2px; font-size: 14px; }
 .main { overflow-y: auto; min-height: 0; padding: 20px 26px 40px; }
@@ -105,7 +115,8 @@ const TYPES = ["Factoid", "Conceptual", "Relational", "Multi-part", "Adversarial
 const NOTES = {
   Adversarial: "No OM in the corpus answers this question, so the gold answer is a refusal and no source OM is shown.",
   CrossHop: "Needs one fact from each of two OMs that share an entity. The quoted evidence is highlighted in green.",
-  Temporal: "Asks how a policy value changed across a date-ordered group of OMs, listed below from oldest to newest.",
+  Temporal: "Asks about a policy value that changed over time: how it changed, or what it is in the latest OM. The OMs involved are listed below from oldest to newest.",
+  Forecast: "A Temporal forecast question. The OMs cannot predict the future, so the gold answer summarises how the value changed across the OMs below and then declines to project.",
   Aggregation: "Asks for a list of entities spread across several OMs, listed below by date."
 };
 let DATA = null, active = new Set(TYPES), selected = null;
@@ -159,25 +170,28 @@ function highlight(text, evidence, answer) {
   return out + esc(text.slice(pos));
 }
 
+const tcls = t => "t-" + t;
+const tags = x => `<span class="tag ${tcls(x.type)}">${x.type}</span>` + (x.forecast ? `<span class="tag fc">Forecast</span>` : "");
+
 function filtered() {
   const q = $("#search").value.trim().toLowerCase();
   return DATA.questions.filter(x => active.has(x.type) &&
-    (!q || x.q.toLowerCase().includes(q) || x.a.toLowerCase().includes(q) ||
+    (!q || x.q.toLowerCase().includes(q) || (x.forecast && "forecast".includes(q)) || x.a.toLowerCase().includes(q) ||
      x.oms.some(o => o.toLowerCase().includes(q)) || String(x.id) === q));
 }
 
 function renderChips() {
   const counts = Object.fromEntries(TYPES.map(t => [t, DATA.questions.filter(x => x.type === t).length]));
   $("#chips").innerHTML = `<button class="chip" data-t="__all" aria-pressed="${active.size === TYPES.length}">All</button>` +
-    TYPES.map(t => `<button class="chip" data-t="${t}" aria-pressed="${active.has(t) && active.size !== TYPES.length}">${t} ${counts[t]}</button>`).join("");
+    TYPES.map(t => `<button class="chip ${tcls(t)}" data-t="${t}" aria-pressed="${active.has(t) && active.size !== TYPES.length}">${t} ${counts[t]}</button>`).join("");
 }
 
 function renderList() {
   const items = filtered();
   $("#count").textContent = `${items.length} of ${DATA.questions.length} questions`;
   $("#list").innerHTML = items.map(x =>
-    `<li role="option" data-id="${x.id}" aria-selected="${selected === x.id}">
-       <span class="qid">Q${x.id}</span><span class="tag">${x.type}</span>
+    `<li role="option" class="${tcls(x.type)}" data-id="${x.id}" aria-selected="${selected === x.id}">
+       <span class="qid">Q${x.id}</span>${tags(x)}
        <div class="qtext">${esc(x.q)}</div></li>`).join("");
 }
 
@@ -208,11 +222,11 @@ function renderDetail(id) {
   const multi = x.oms.length > 1, none = x.oms.length === 0;
   $("#main").innerHTML =
     `<div class="card">
-       <span class="qid">Q${x.id}</span><span class="tag">${x.type}</span>
+       <span class="qid">Q${x.id}</span>${tags(x)}
        <h2>${esc(x.q)}</h2>
        <div class="label">Gold answer</div>
        <div class="answer ${x.type === "Adversarial" ? "refusal" : ""}">${esc(x.a)}</div>
-       ${NOTES[x.type] ? `<p class="note">${NOTES[x.type]}</p>` : ""}
+       ${(x.forecast ? NOTES.Forecast : NOTES[x.type]) ? `<p class="note">${x.forecast ? NOTES.Forecast : NOTES[x.type]}</p>` : ""}
      </div>
      ${none ? "" : `<div class="card">
        <div class="label">${multi ? `Source OMs (${x.oms.length})` : "Source OM"}</div>
