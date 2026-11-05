@@ -57,6 +57,10 @@ header a { color: var(--accent); }
 .omtab small { color: var(--muted); }
 .ommeta { display: flex; flex-wrap: wrap; gap: 14px; color: var(--ink2); font-size: 13px; margin-bottom: 10px; }
 .ommeta a { color: var(--accent); }
+.viewtabs { display: flex; gap: 6px; margin-bottom: 10px; }
+.viewtab { border: 1px solid var(--line); background: var(--bg); color: var(--ink2); border-radius: 6px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
+.viewtab[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pdfframe { width: 100%; height: 75vh; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
 .omtext { font-family: var(--mono); font-size: 12.8px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 14px; max-height: 70vh; overflow-y: auto; }
 mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
 mark.ev { background: var(--mark-ev); }
@@ -74,7 +78,7 @@ mark.ev { background: var(--mark-ev); }
 <body>
 <header>
   <h1>IDiOM-QA Explorer</h1>
-  <p>Pick a question to read the Office Memorandum it was asked from. Data:
+  <p>Pick a question to see the Office Memorandum it was asked from, as the original PDF or as our transcription. Data:
     <a href="https://github.com/prantikaC/IDiOM-QA">github.com/prantikaC/IDiOM-QA</a> ·
     <a href="https://doi.org/10.5281/zenodo.23916568">doi:10.5281/zenodo.23916568</a></p>
 </header>
@@ -153,14 +157,23 @@ function renderList() {
        <div class="qtext">${esc(x.q)}</div></li>`).join("");
 }
 
+let view = "pdf";
 function renderOM(x, omId) {
   const om = DATA.oms[omId];
   const url = "https://github.com/prantikaC/IDiOM-QA/blob/main/" + om.path.split("/").map(encodeURIComponent).join("/");
+  const pdf = om.pdf ? om.pdf.split("/").map(encodeURIComponent).join("/") : null;
+  const v = pdf ? view : "text";
   $("#omview").innerHTML =
     `<div class="ommeta"><span><b>${esc(omId)}</b></span><span>${esc(om.body)}</span><span>Issued ${esc(om.date)}</span>
-       <a href="${url}" target="_blank" rel="noopener">Open file on GitHub</a></div>
-     <div class="omtext">${highlight(om.text, x.ev[omId] || [], x.type === "Adversarial" ? "" : x.a)}</div>`;
+       ${pdf ? `<a href="${pdf}" target="_blank" rel="noopener">Open PDF</a>` : ""}
+       <a href="${url}" target="_blank" rel="noopener">Transcription on GitHub</a></div>
+     ${pdf ? `<div class="viewtabs"><button class="viewtab" data-v="pdf" aria-pressed="${v === "pdf"}">Original PDF</button>
+       <button class="viewtab" data-v="text" aria-pressed="${v === "text"}">Transcription</button></div>` : ""}
+     ${v === "pdf" ? `<iframe class="pdfframe" src="${pdf}" title="Original PDF of ${esc(omId)}"></iframe>`
+                   : `<div class="omtext">${highlight(om.text, x.ev[omId] || [], x.type === "Adversarial" ? "" : x.a)}</div>`}`;
+  document.querySelectorAll(".viewtab").forEach(b => b.onclick = () => { view = b.dataset.v; renderOM(x, omId); });
   document.querySelectorAll(".omtab").forEach(b => b.setAttribute("aria-pressed", b.dataset.om === omId));
+  document.querySelector(".legend").style.display = v === "pdf" ? "none" : "";
 }
 
 function renderDetail(id) {

@@ -1,4 +1,5 @@
 """Build docs/data.json for the IDiOM-QA explorer page from the release files.
+The original PDFs are expected in docs/pdfs/<body>/<om id>.pdf.
 
     python build_site_data.py <repo root>
 """
@@ -16,9 +17,12 @@ for f in sorted(glob.glob(os.path.join(root, "data/corpus/*/*_om_text_files/*.tx
     post = frontmatter.load(f)
     stem = os.path.basename(f)[:-4]
     rel = os.path.relpath(f, root)
+    body_dir = rel.split(os.sep)[2]
+    pdf = os.path.join("pdfs", body_dir, stem + ".pdf")
     oms[stem] = {"body": str(post.metadata.get("institute", "")).upper(),
                  "date": str(post.metadata.get("issue_date", "")),
-                 "path": rel, "text": post.content.strip()}
+                 "path": rel, "text": post.content.strip(),
+                 "pdf": pdf if os.path.exists(os.path.join(root, "docs", pdf)) else None}
 
 out = []
 for i, r in enumerate(qs):

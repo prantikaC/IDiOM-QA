@@ -22,6 +22,8 @@ with the IDiOM-RAG reference system and the outputs of twelve RAG systems.
   - `hhem/` and `factcheck/` (AlignScore, MiniCheck): context-answer support;
   - `retrieval/`: retriever runs and qrels-based metrics.
   Every number and figure in the paper is computed from these files.
+- `docs/`: the IDiOM-QA Explorer web page (https://prantikac.github.io/IDiOM-QA/), which shows each
+  question with its source OM as the original PDF (`docs/pdfs/`) and as our transcription.
 - `code/`: IDiOM-RAG (`src/`), the eleven baselines (`baselines/`), index and KG builders,
   the question generator and the evaluation scripts (`scripts/`).
 
@@ -40,7 +42,7 @@ All hyperparameters are in `code/config.py`.
 - **Data and results** (`data/`, `results/`): Creative Commons Attribution 4.0 International
   (CC-BY-4.0), see `LICENSE-DATA`, `data/LICENSE` and `results/LICENSE`.
 
-The OM texts in `data/corpus/` reproduce public documents issued by UGC, CSIR, IACS and
-Jadavpur University and remain subject to the terms of those bodies. CC-BY-4.0 applies to our
+The OM texts in `data/corpus/` and the original PDFs in `docs/pdfs/` reproduce public documents
+issued by UGC, CSIR, IACS and Jadavpur University and remain subject to the terms of those bodies. CC-BY-4.0 applies to our
 own contributions: the questions and gold answers, the corrections to the transcriptions, the
 document summaries, the knowledge graph, the relevance judgements and the system results.
