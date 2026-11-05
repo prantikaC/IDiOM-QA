@@ -12,7 +12,7 @@ with the IDiOM-RAG reference system and the outputs of twelve RAG systems.
 to see its gold answer and the Office Memorandum it was asked from, as the original PDF or as our
 transcription, with the evidence highlighted. Filter by question type or search by text or OM id.
 
-[![IDiOM-QA Explorer: a CrossHop question with its two source OMs and the highlighted evidence](docs/Screenshot 2026-11-06 003032.png)](https://prantikac.github.io/IDiOM-QA/)
+[![IDiOM-QA Explorer: a CrossHop question with its two source OMs and the highlighted evidence](docs/explorer.png)](https://prantikac.github.io/IDiOM-QA/)
 
 ## Contents
 - `data/qa/idiom_qa_v4.json`: the 475 QA pairs (91 Factoid, 89 Conceptual,
