@@ -115,7 +115,7 @@ const TYPES = ["Factoid", "Conceptual", "Relational", "Multi-part", "Adversarial
 const NOTES = {
   Adversarial: "No OM in the corpus answers this question, so the gold answer is a refusal and no source OM is shown.",
   CrossHop: "Needs one fact from each of two OMs that share an entity. The quoted evidence is highlighted in green.",
-  Temporal: "Asks about a policy value that changed over time: how it changed, or what it is in the latest OM. The OMs involved are listed below from oldest to newest.",
+  Temporal: "Asks how a policy value changed across a date-ordered group of OMs, listed below from oldest to newest.",
   Forecast: "A Temporal forecast question. The OMs cannot predict the future, so the gold answer summarises how the value changed across the OMs below and then declines to project.",
   Aggregation: "Asks for a list of entities spread across several OMs, listed below by date."
 };

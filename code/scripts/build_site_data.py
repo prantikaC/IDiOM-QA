@@ -11,7 +11,7 @@ import sys
 import frontmatter
 
 root = sys.argv[1]
-qs = json.load(open(os.path.join(root, "data/qa/idiom_qa_v4.json"), encoding="utf-8"))
+qs = json.load(open(os.path.join(root, "data/qa/idiom_qa_v4_paper.json"), encoding="utf-8"))
 oms = {}
 for f in sorted(glob.glob(os.path.join(root, "data/corpus/*/*_om_text_files/*.txt"))):
     post = frontmatter.load(f)

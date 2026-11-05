@@ -15,11 +15,10 @@ transcription, with the evidence highlighted. Filter by question type or search 
 [![IDiOM-QA Explorer: a CrossHop question with its two source OMs and the highlighted evidence](docs/explorer.png)](https://prantikac.github.io/IDiOM-QA/)
 
 ## Contents
-- `data/qa/idiom_qa_v4.json`: the 475 QA pairs (91 Factoid, 89 Conceptual,
+- `data/qa/idiom_qa_v4_paper.json`: the 475 QA pairs scored in the paper (91 Factoid, 89 Conceptual,
   92 Relational, 92 Multi-part, 71 Adversarial, 16 CrossHop, 13 Temporal, 11 Aggregation).
-  Six Temporal items ask for a current value (`temporal_kind: "current"`: Q437, Q439, Q442, Q444,
-  Q446, Q448); their gold answer is the value in the latest OM, `stale_value` holds the outdated
-  value an earlier OM gives, and `evidence_oms` lists the OMs involved.
+  Six Temporal items are forecast questions (`temporal_kind: "predictive"`: Q437, Q439, Q442, Q444,
+  Q446, Q448); their gold answer summarises the revision history and declines to predict.
   Each item has `input`, `expected_output`, `question_type`, `source` (OM id) and
   `context_used` (gold evidence); CrossHop items also carry the two OMs and their evidence.
 - `data/corpus/<body>/<body>_om_text_files/`: hand-checked VLM transcriptions of all 116 OMs
@@ -28,7 +27,7 @@ transcription, with the evidence highlighted. Filter by question type or search 
   every triple carries `source_om` and `issue_date`).
 - `data/qrels/`: TREC-format OM-level relevance judgements for the 404 answerable questions, with `queries.tsv` and `docids.tsv`.
 - `results/`: per-question outputs and scores of the twelve RAG systems and the two reference
-  runs (closed book, gold evidence) on `idiom_qa_v4.json`:
+  runs (closed book, gold evidence) on `idiom_qa_v4_paper.json`:
   - `ragas/`: six RAGAS metrics (judge deepseek-r1:32b); each detailed CSV also holds the
     question, response, retrieved contexts and gold answer;
   - `surface/`: ROUGE, BLEU, METEOR, BERTScore;
@@ -64,7 +63,7 @@ one database. Any 5.x or later release with Bolt access should do.
     python scripts/load_kg.py --kg ../data/kg/kg.json    # 502 nodes, 591 relations; --wipe to replace
 
     # 3. Local models via Ollama: qwen2.5:7b (generation), qwen2.5:32b (reasoning)
-    python scripts/run_idiom_rag.py --backend ollama --dataset ../data/qa/idiom_qa_v4.json
+    python scripts/run_idiom_rag.py --backend ollama --dataset ../data/qa/idiom_qa_v4_paper.json
 
 `load_kg.py` loads the released graph exactly as it was used in the paper, and refuses to write
 into a database that already holds nodes unless `--wipe` is given. `scripts/build_kg.py`
