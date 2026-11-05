@@ -85,7 +85,7 @@ All hyperparameters are in `code/config.py`.
   (CC-BY-4.0), see `LICENSE-DATA`, `data/LICENSE` and `results/LICENSE`.
 
 The OM texts in `data/corpus/` and the original PDFs in `docs/pdfs/` reproduce public documents
-issued by UGC, CSIR, IACS and Jadavpur University and remain subject to the terms of those bodies. CC-BY-4.0 applies to our
+issued by UGC, CSIR, IACS and Jadavpur University. CC-BY-4.0 applies to our
 own contributions: the questions and gold answers, the corrections to the transcriptions, the
 document summaries, the knowledge graph, the relevance judgements and the system results.
 
